@@ -4,6 +4,7 @@ using Benchwarp.Doors;
 using Benchwarp.Doors.Obstacles;
 using UnityEngine;
 using TeamCherry.NestedFadeGroup;
+using GlobalEnums;
 
 namespace Benchwarp.Data;
 
@@ -267,7 +268,12 @@ public static class BaseGateList
     public static DoorData Aspid_01__top7 { get; } = new(new(Aspid_01, top7), new(Coral_19, bot7), null);
     public static DoorData Bellshrine__left1 { get; } = new(new(Bellshrine, left1), new(Bone_05, right1));
     public static DoorData Bellshrine__right1 { get; } = new(new(Bellshrine, right1), new(Bone_03, left1));
-    public static DoorData Bellshrine_02__left1 { get; } = new(new(Bellshrine_02, left1), new(Greymoor_01, right2));
+    public static DoorData Bellshrine_02__left1 { get; } = new(new(Bellshrine_02, left1), new(Greymoor_01, right2))
+    {
+        Obstacles = new([
+            new ObstacleInfo("bellshrine_gate_curved", ObstacleType.OneWayMechanismEntry, ObstacleSeverity.LimitsRoomAccess, new PlayerDataBoolSaveInfo(nameof(PlayerData.bellShrineGreymoor)))
+        ])
+    };
     public static DoorData Bellshrine_02__right1 { get; } = new(new(Bellshrine_02, right1), new(Greymoor_02, left2));
     public static DoorData Bellshrine_03__left1 { get; } = new(new(Bellshrine_03, left1), new(Shellwood_08, right1));
     public static DoorData Bellshrine_03__right1 { get; } = new(new(Bellshrine_03, right1), new(Shellwood_19, left1));
@@ -1182,26 +1188,55 @@ public static class BaseGateList
     public static DoorData Dust_Maze_Last_Hall__left1 { get; } = new(new(Dust_Maze_Last_Hall, left1));
     public static DoorData Dust_Maze_Last_Hall__right1 { get; } = new(new(Dust_Maze_Last_Hall, right1));
     public static DoorData Dust_Shack__left1 { get; } = new(new(Dust_Shack, left1), new(Dust_04, door1));
-    public static DoorData Greymoor_01__bot1 { get; } = new(new(Greymoor_01, bot1), new(Bone_East_11, top1));
+    public static DoorData Greymoor_01__bot1 { get; } = new(new(Greymoor_01, bot1), new(Bone_East_11, top1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Floor Control Scene/Floor Unbroken", ObstacleType.OneWayBreakableExit, ObstacleSeverity.LimitsExitAccess, new PlayerDataBoolSaveInfo(nameof(PlayerData.crashedIntoGreymoor))),
+            new GameObjectActiveObstacleInfo("Floor Control Scene/Floor Broken", true, ObstacleType.Other, ObstacleSeverity.AbnormalVisual)
+        ])
+    };
     public static DoorData Greymoor_01__left1 { get; } = new(new(Greymoor_01, left1), new(Greymoor_12, right1));
     public static DoorData Greymoor_01__left2 { get; } = new(new(Greymoor_01, left2), new(Greymoor_13, right1));
     public static DoorData Greymoor_01__right1 { get; } = new(new(Greymoor_01, right1), new(Greymoor_02, left1));
-    public static DoorData Greymoor_01__right2 { get; } = new(new(Greymoor_01, right2), new(Bellshrine_02, left1));
+    public static DoorData Greymoor_01__right2 { get; } = new(new(Greymoor_01, right2), new(Bellshrine_02, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Bellshrine gate", ObstacleType.OneWayMechanismExit, ObstacleSeverity.LimitsRoomAccess, new PlayerDataBoolSaveInfo(nameof(PlayerData.bellShrineGreymoor)))
+        ])
+    };
     public static DoorData Greymoor_01__right3 { get; } = new(new(Greymoor_01, right3), new(Greymoor_02, left3));
     public static DoorData Greymoor_02__left1 { get; } = new(new(Greymoor_02, left1), new(Greymoor_01, right1));
     public static DoorData Greymoor_02__left2 { get; } = new(new(Greymoor_02, left2), new(Bellshrine_02, right1));
     public static DoorData Greymoor_02__left3 { get; } = new(new(Greymoor_02, left3), new(Greymoor_01, right3));
     public static DoorData Greymoor_02__right1 { get; } = new(new(Greymoor_02, right1), new(Greymoor_15, left1));
-    public static DoorData Greymoor_02__right2 { get; } = new(new(Greymoor_02, right2), new(Greymoor_17, left1));
+    public static DoorData Greymoor_02__right2 { get; } = new(new(Greymoor_02, right2), new(Greymoor_17, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Breakable Wall", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo()),
+            new UnmaskerInfo("Masks"),
+            new ObstacleInfo("Camera Locks", ObstacleType.Mask, ObstacleSeverity.AbnormalVisual)
+        ])
+    };
     public static DoorData Greymoor_02__right3 { get; } = new(new(Greymoor_02, right3), new(Greymoor_15, left3));
     public static DoorData Greymoor_03__left1 { get; } = new(new(Greymoor_03, left1), new(Greymoor_04, right1));
     public static DoorData Greymoor_03__left2 { get; } = new(new(Greymoor_03, left2), new(Greymoor_04, right2));
-    public static DoorData Greymoor_03__left3 { get; } = new(new(Greymoor_03, left3), new(Halfway_01, right1));
+    public static DoorData Greymoor_03__left3 { get; } = new(new(Greymoor_03, left3), new(Halfway_01, right1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Grey Door", ObstacleType.OneWayMechanismExit, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo(SceneName: Halfway_01, ID: "Hornet_pressure_plate_small_persistent"))
+        ])
+    };
     public static DoorData Greymoor_03__right1 { get; } = new(new(Greymoor_03, right1), new(Dust_01, left1));
     public static DoorData Greymoor_03__right2 { get; } = new(new(Greymoor_03, right2), new(Greymoor_12, left1));
     public static DoorData Greymoor_03__right3 { get; } = new(new(Greymoor_03, right3), new(Greymoor_13, left1));
     public static DoorData Greymoor_03__right4 { get; } = new(new(Greymoor_03, right4), new(Halfway_01, left1));
-    public static DoorData Greymoor_03__right5 { get; } = new(new(Greymoor_03, right5), new(Greymoor_24, left1));
+    public static DoorData Greymoor_03__right5 { get; } = new(new(Greymoor_03, right5), new(Greymoor_24, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Breakable Wall", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo()),
+            new UnmaskerInfo("Masks")
+        ])
+    };
     public static DoorData Greymoor_04__left1 { get; } = new(new(Greymoor_04, left1), new(Greymoor_11, right1));
     public static DoorData Greymoor_04__left2 { get; } = new(new(Greymoor_04, left2), new(Greymoor_10, right1));
     public static DoorData Greymoor_04__left3 { get; } = new(new(Greymoor_04, left3), new(Greymoor_05, right1));
@@ -1245,13 +1280,24 @@ public static class BaseGateList
     public static DoorData Greymoor_15b__door1 { get; } = new(new(Greymoor_15b, door1), new(Room_CrowCourt, left1));
     public static DoorData Greymoor_15b__left2 { get; } = new(new(Greymoor_15b, left2), new(Greymoor_15, right2));
     public static DoorData Greymoor_15b__left3 { get; } = new(new(Greymoor_15b, left3), new(Greymoor_15, right3));
-    public static DoorData Greymoor_15b__right1 { get; } = new(new(Greymoor_15b, right1), new(Clover_01, left1));
+    public static DoorData Greymoor_15b__right1 { get; } = new(new(Greymoor_15b, right1), new(Clover_01, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Clover Entry Gate (1)", ObstacleType.OpenAfterProgression, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PlayerDataIntSaveInfo("GreenPrinceLocation", (int)GreenPrinceLocations.Clover))
+        ])
+    };
     public static DoorData Greymoor_15b__top1 { get; } = new(new(Greymoor_15b, top1), new(Greymoor_22, bot1));
     public static DoorData Greymoor_16__left1 { get; } = new(new(Greymoor_16, left1), new(Greymoor_08, right1));
     public static DoorData Greymoor_16__top1 { get; } = new(new(Greymoor_16, top1), new(Bellway_04, bot1));
     public static DoorData Greymoor_17__left1 { get; } = new(new(Greymoor_17, left1), new(Greymoor_02, right2));
     public static DoorData Greymoor_17__top1 { get; } = new(new(Greymoor_17, top1), new(Dust_11, bot1));
-    public static DoorData Greymoor_20b__door1 { get; } = new(new(Greymoor_20b, door1), new(Greymoor_20c, left1));
+    public static DoorData Greymoor_20b__door1 { get; } = new(new(Greymoor_20b, door1), new(Greymoor_20c, left1))
+    {
+        Obstacles = new([
+            new BehaviourObstacleInfo<PlayMakerFSM>("Chapel Door Control", false, ObstacleType.ClosedAfterProgression, ObstacleSeverity.ModifiesSaveData | ObstacleSeverity.LimitsExitAccess),
+            new TransitionObstacleInfo("Chapel Door Control/door1", true, ObstacleType.ClosedAfterProgression, ObstacleSeverity.LimitsExitAccess),
+        ])
+    };
     public static DoorData Greymoor_20b__right1 { get; } = new(new(Greymoor_20b, right1), new(Greymoor_07, left1));
     public static DoorData Greymoor_20c__door_memoryEnd { get; } = new(new(Greymoor_20c, door_memoryEnd));
     public static DoorData Greymoor_20c__left1 { get; } = new(new(Greymoor_20c, left1), new(Greymoor_20b, door1));
@@ -1521,7 +1567,13 @@ public static class BaseGateList
             new("Aqueduct_05", door2)
         ])
     };
-    public static DoorData Room_CrowCourt__bot1 { get; } = new(new(Room_CrowCourt, bot1), new(Room_CrowCourt_02, top1));
+    public static DoorData Room_CrowCourt__bot1 { get; } = new(new(Room_CrowCourt, bot1), new(Room_CrowCourt_02, top1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("court_door", ObstacleType.OpenAfterProgression, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PlayerDataBoolSaveInfo(nameof(PlayerData.OpenedCrowSummonsDoor))),
+            new ObstacleInfo("Door Mask", ObstacleType.Mask, ObstacleSeverity.LimitsVisibility)
+        ]),
+    };
     public static DoorData Room_CrowCourt__left1 { get; } = new(new(Room_CrowCourt, left1), new(Greymoor_15b, door1));
     public static DoorData Room_CrowCourt_02__top1 { get; } = new(new(Room_CrowCourt_02, top1), new(Room_CrowCourt, bot1));
     public static DoorData Room_Diving_Bell__door_cinematicEnd { get; } = new(new(Room_Diving_Bell, door_cinematicEnd));
@@ -1934,7 +1986,7 @@ public static class BaseGateList
     public static DoorData Tut_03__door2 { get; } = new(new(Tut_03, door2), new(Tut_04, left1))
     {
         Obstacles = new([
-            new TestObjObstacleInfo("Sanctum Door", true, ObstacleType.OpenAfterProgression, ObstacleSeverity.InterruptsEntry | ObstacleSeverity.LimitsExitAccess)
+            new TestObjObstacleInfo("Sanctum Door", true, ObstacleType.OpenAfterProgression, ObstacleSeverity.InterruptsEntry)
         ])
     };
     public static DoorData Tut_03__right1 { get; } = new(new(Tut_03, right1), new(Tut_01, left1));

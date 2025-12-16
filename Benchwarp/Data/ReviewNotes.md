@@ -23,27 +23,13 @@
 ### Deep_Docks
     - Dock_12__door1: complex handling needed for Permanent behaviour.
 
+### Greymoor
+    - Greymoor_08__door1: Both NoSave and permanent handling needs to be done. Complicated because of the additive scenes.
+    - Greymoor_08__door2: Both NoSave and permanent handling needs to be done. Complicated because of the additive scenes.
+
 (I got lazy with documenting permanent obstacle handling - basically anything that doesn't have an ObstacleSaveInfo needs to be reverified).
 
 The below areas have been checked when using the old door warp coroutine - many issues with softlocks/camera are likely already fixed with the new coroutine.
-
-### Greymoor
-    - Bellshrine_02__left1: collider obstacle.
-    - Bellway_04: game softlocks if door warping to this scene during Act 3 if bell beast fast travel isn't unlocked.
-    - Greymoor_01__bot1: collider obstacle.
-    - Greymoor_01__right2: collider obstacle (lever).
-    - Greymoor_02__right2: collider obstacle.
-    - Greymoor_03__left3: collider obstacle.
-    - Greymoor_03__right5: collider obstacle.
-    - Greymoor_06__top1: may need to handle availability of top1 entry in a unique way (dependent on act 1/2 and 3?).
-    - Greymoor_08__door1: arrives at right1 instead if flea caravan isn't in scene.
-    - Greymoor_08__door2: arrives at right1 instead if flea caravan isn't in scene.
-    - Greymoor_15b__right1: collider obstacle.
-    - Greymoor_17__top1: strange visual bug with the camera.
-    - Greymoor_20b__door1: Door closes if the corresponding crest was obtained. It doesn't matter how hornet enters the scene.
-    - Greymoor_20b__right1: same thing happens with the door from here.
-    - Greymoor_20c: titled area should be Chapel of the Reaper.
-    - Room_CrowCourt__bot1: collider obstacle.
 
 ### Unknown
     - Memory_Needolin: map/titled area should be Bellhart.
@@ -483,6 +469,24 @@ The below areas have been checked when using the new door warp coroutine.
     - Tut_03__door2: Should arrive at the door to the Chapel, but arrives at top1 regardless of whether if in Act 3 or not. Also need to handle door being closed when not Act 3.
     - Tut_04: titled area should be Ruined Chapel.
     - Tut_05: titled area should be Ruined Chapel.
+
+### Greymoor
+    - Bellshrine_02__left1: collider obstacle.
+    - Bellway_04: game softlocks if door warping to this scene during Act 3 if bell beast fast travel isn't unlocked.
+    - Greymoor_01__bot1: collider obstacle.
+    - Greymoor_01__right2: collider obstacle (lever).
+    - Greymoor_02__right2: collider obstacle.
+    - Greymoor_03__left3: collider obstacle.
+    - Greymoor_03__right5: collider obstacle.
+    - Greymoor_06__top1: may need to handle availability of top1 entry in a unique way (dependent on act 1/2 and 3?).
+    - Greymoor_08__door1: arrives at right1 instead if flea caravan isn't in scene.
+    - Greymoor_08__door2: arrives at right1 instead if flea caravan isn't in scene.
+    - Greymoor_15b__right1: collider obstacle.
+    - Greymoor_17__top1: strange visual bug with the camera.
+    - Greymoor_20b__door1: Door closes if the corresponding crest was obtained. It doesn't matter how hornet enters the scene.
+    - Greymoor_20b__right1: same thing happens with the door from here.
+    - Greymoor_20c: titled area should be Chapel of the Reaper.
+    - Room_CrowCourt__bot1: collider obstacle.
 
 ### Doors with dynamic targets
     - Shadow_04__left1: collider obstacle.

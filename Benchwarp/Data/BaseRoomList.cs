@@ -3643,7 +3643,7 @@ public static class BaseRoomList
         Name = SceneNames.Greymoor_20c,
         MapZone = MapZone.GREYMOOR,
         MapArea = MapAreaNames.Greymoor,
-        TitledArea = TitledAreaNames.Greymoor,
+        TitledArea = TitledAreaNames.Chapel_of_the_Reaper,
         Gates = new([
             Greymoor_20c__door_memoryEnd,
             Greymoor_20c__left1,
