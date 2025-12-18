@@ -871,7 +871,13 @@ public static class BaseGateList
     public static DoorData Coral_11b__right1 { get; } = new(new(Coral_11b, right1), new(Coral_11, left1));
     public static DoorData Coral_12__left2 { get; } = new(new(Coral_12, left2), new(Coral_03, right2));
     public static DoorData Coral_12__left3 { get; } = new(new(Coral_12, left3), new(Coral_03, right3));
-    public static DoorData Coral_12__right1 { get; } = new(new(Coral_12, right1), new(Coral_37, left1));
+    public static DoorData Coral_12__right1 { get; } = new(new(Coral_12, right1), new(Coral_37, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Breakable Wall", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo()),
+            new UnmaskerInfo("Masks")
+        ])
+    };
     public static DoorData Coral_19__bot1 { get; } = new(new(Coral_19, bot1), new(Aspid_01, top1), null);
     public static DoorData Coral_19__bot2 { get; } = new(new(Coral_19, bot2), new(Aspid_01, top2), null);
     public static DoorData Coral_19__bot3 { get; } = new(new(Coral_19, bot3), new(Aspid_01, top3), null);
@@ -914,8 +920,19 @@ public static class BaseGateList
     public static DoorData Coral_35__left1 { get; } = new(new(Coral_35, left1), new(Coral_43, right1));
     public static DoorData Coral_35__left2 { get; } = new(new(Coral_35, left2), new(Coral_42, right1));
     public static DoorData Coral_35__right1 { get; } = new(new(Coral_35, right1), new(Bellway_08, left1));
-    public static DoorData Coral_35__right2 { get; } = new(new(Coral_35, right2), new(Coral_36, left1));
-    public static DoorData Coral_35__top1 { get; } = new(new(Coral_35, top1), new(Coral_35b, bot1));
+    public static DoorData Coral_35__right2 { get; } = new(new(Coral_35, right2), new(Coral_36, left1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("Breakable Wall", ObstacleType.OneWayBreakableEntry, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo()),
+            new UnmaskerInfo("Masks")
+        ])
+    };
+    public static DoorData Coral_35__top1 { get; } = new(new(Coral_35, top1), new(Coral_35b, bot1))
+    {
+        Obstacles = new([
+            new ObstacleInfo("boulder_shortcut (1)", ObstacleType.OneWayBreakableExit, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo(SceneName: Coral_35b, ID: "Stalactite Group Bottom"))
+        ])
+    };
     public static DoorData Coral_35b__bot1 { get; } = new(new(Coral_35b, bot1), new(Coral_35, top1));
     public static DoorData Coral_35b__door1 { get; } = new(new(Coral_35b, door1), new(Coral_29, left1));
     public static DoorData Coral_35b__left2 { get; } = new(new(Coral_35b, left2), new(Coral_27, right1));
@@ -940,7 +957,14 @@ public static class BaseGateList
     public static DoorData Coral_Judge_Arena__door_caravanTravelEnd { get; } = new(new(Coral_Judge_Arena, door_caravanTravelEnd));
     public static DoorData Coral_Judge_Arena__door2 { get; } = new(new(Coral_Judge_Arena, door2), new(Room_Caravan_Spa, left1), null);
     public static DoorData Coral_Judge_Arena__left1 { get; } = new(new(Coral_Judge_Arena, left1), new(Coral_32, right1));
-    public static DoorData Coral_Judge_Arena__right1 { get; } = new(new(Coral_Judge_Arena, right1), new(Coral_10, left1));
+    public static DoorData Coral_Judge_Arena__right1 { get; } = new(new(Coral_Judge_Arena, right1), new(Coral_10, left1))
+    {
+        Obstacles = new([
+            new BehaviourObstacleInfo<BoxCollider2D>("Boss Scene/Great Gate/terrain collider", false, ObstacleType.OpenAfterProgression, ObstacleSeverity.LimitsExitAccess),
+            new ObstacleInfo("Boss Scene/Great Gate/Gate/Gate", ObstacleType.Other, ObstacleSeverity.AbnormalVisual),
+            new ObstacleInfo("Black Thread States Thread Only Variant/Black Thread World/Big Battle Gate", ObstacleType.Other, ObstacleSeverity.AbnormalVisual),
+        ])
+    };
     public static DoorData Coral_Tower_01__door_wakeOnGround { get; } = new(new(Coral_Tower_01, door_wakeOnGround));
     public static DoorData Coral_Tower_01__left1 { get; } = new(new(Coral_Tower_01, left1), new(Coral_28, door1));
     public static DoorData Cradle_01__left1 { get; } = new(new(Cradle_01, left1), new(Cradle_02, right2));

@@ -33,20 +33,12 @@
 ### Halfway_Home
     - Halfway_01__bot1: If the vintage nectar gauntlet hasn't been completed, the hatch will appear and stay open. If the vintage nectar gauntlet was previously cleared, the hatch closes off and the conversation with Creige happens every time.
 
+### Blasted_Steps
+    - Coral_Judge_Arena__door2: Both NoSave and permanent handling needs to be done. Complicated because of the additive scenes.
+
 (I got lazy with documenting permanent obstacle handling - basically anything that doesn't have an ObstacleSaveInfo needs to be reverified).
 
 The below areas have been checked when using the old door warp coroutine - many issues with softlocks/camera are likely already fixed with the new coroutine.
-
-### Blasted_Steps
-    - Bellway_08: game softlocks if door warping to this scene during Act 3 if bell beast fast travel isn't unlocked.
-    - Coral_03__bot1/bot2/bot3/bot4/bot5/bot6: big bot transition at several different positions.
-    - Coral_12__right1: collider obstacle.
-    - Coral_19__bot1/bot2/bot3/bot4/bot5/bot6/bot7: big bot transition at several different positions.
-    - Coral_19__top3/top4/top5/top6/top7/top8: big top transition at several different positions.
-    - Coral_35__right2: collider obstacle.
-    - Coral_35__top1: collider obstacle.
-    - Coral_Judge_Arena__door2: arrives at right1 instead if flea caravan isn't in scene.
-    - Coral_Judge_Arena__right1: collider obstacle.
 
 ### Mosshome
     - Mosstown_01__bot1: collider obstacle.
@@ -492,6 +484,17 @@ The below areas have been checked when using the new door warp coroutine.
 ### First_Shrine
 
 ### Voltnest
+
+### Blasted_Steps
+    - Bellway_08: game softlocks if door warping to this scene during Act 3 if bell beast fast travel isn't unlocked.
+    - Coral_03__bot1/bot2/bot3/bot4/bot5/bot6: big bot transition at several different positions.
+    - Coral_12__right1: collider obstacle.
+    - Coral_19__bot1/bot2/bot3/bot4/bot5/bot6/bot7: big bot transition at several different positions.
+    - Coral_19__top3/top4/top5/top6/top7/top8: big top transition at several different positions.
+    - Coral_35__right2: collider obstacle.
+    - Coral_35__top1: collider obstacle.
+    - Coral_Judge_Arena__door2: arrives at right1 instead if flea caravan isn't in scene.
+    - Coral_Judge_Arena__right1: collider obstacle.
 
 ### Doors with dynamic targets
     - Shadow_04__left1: collider obstacle.
