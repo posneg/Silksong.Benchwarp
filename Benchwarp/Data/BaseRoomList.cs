@@ -4315,8 +4315,8 @@ public static class BaseRoomList
     {
         Name = SceneNames.Mosstown_03,
         MapZone = MapZone.SHELLWOOD_THICKET,
-        MapArea = MapAreaNames.Mosslands,
-        TitledArea = TitledAreaNames.Mosshome,
+        MapArea = MapAreaNames.Shellwood,
+        TitledArea = TitledAreaNames.Shellwood,
         Gates = new([
             Mosstown_03__right1,
             Mosstown_03__right2,
@@ -6830,7 +6830,7 @@ public static class BaseRoomList
         Name = SceneNames.Wisp_03,
         MapZone = MapZone.GREYMOOR,
         MapArea = MapAreaNames.Greymoor,
-        TitledArea = TitledAreaNames.Wisp_Thicket,
+        TitledArea = TitledAreaNames.Greymoor,
         Gates = new([
             Wisp_03__door1,
             Wisp_03__right1,
@@ -6868,7 +6868,7 @@ public static class BaseRoomList
         Name = SceneNames.Wisp_06,
         MapZone = MapZone.WISP,
         MapArea = MapAreaNames.Greymoor,
-        TitledArea = TitledAreaNames.Wisp_Thicket,
+        TitledArea = TitledAreaNames.Greymoor,
         Gates = new([
             Wisp_06__bot1,
         ]),

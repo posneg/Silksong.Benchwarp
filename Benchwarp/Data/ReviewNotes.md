@@ -36,31 +36,15 @@
 ### Blasted_Steps
     - Coral_Judge_Arena__door2: Both NoSave and permanent handling needs to be done. Complicated because of the additive scenes.
 
+### Wisp_Thicket
+    - Wisp_03__door1: door closes behind Hornet. Keep it open as a transition fix?
+
+### The_Cradle
+    - Tube_Hub: Act 3 blocked transitions are handled by reverting world state to pre-Act 3. Might be a better way to handle it?
+
 (I got lazy with documenting permanent obstacle handling - basically anything that doesn't have an ObstacleSaveInfo needs to be reverified).
 
 The below areas have been checked when using the old door warp coroutine - many issues with softlocks/camera are likely already fixed with the new coroutine.
-
-### Mosshome
-    - Mosstown_01__bot1: collider obstacle.
-    - Mosstown_02__left1: collider obstacle.
-    - Mosstown_03: map/titled area should be Shellwood.
-    - Mosstown_03__right1: collider obstacle.
-    - Mosstown_03__top1: collider obstacle.
-
-### Wisp_Thicket
-    - Wisp_02__top1: collider obstacle.
-    - Wisp_03: titled area should be Greymoor.
-    - Wisp_03__door1: door closes behind Hornet. Keep it open as a transition fix?
-    - Wisp_03__top1: collider obstacle.
-    - Wisp_05__left1: collider obstacle.
-    - Wisp_06: titled area should be Greymoor.
-
-### Weavenest_Atla
-    - Weave_02__right3: collider obstacle.
-
-### The_Cradle
-    - Cradle_02__left2: collider obstacle.
-    - Tube_Hub: in Act 3 only, all three transition gates are blocked.
 
 ### Bellhart
     - Belltown__door3/door4/door5: Spawns hornet in the middle of the scene. Not sure if this always happens or it depends on saving the town/Act 3 or a combination of both.
@@ -495,6 +479,27 @@ The below areas have been checked when using the new door warp coroutine.
     - Coral_35__top1: collider obstacle.
     - Coral_Judge_Arena__door2: arrives at right1 instead if flea caravan isn't in scene.
     - Coral_Judge_Arena__right1: collider obstacle.
+
+### Mosshome
+    - Mosstown_01__bot1: collider obstacle.
+    - Mosstown_02__left1: collider obstacle.
+    - Mosstown_03: map/titled area should be Shellwood.
+    - Mosstown_03__right1: collider obstacle.
+    - Mosstown_03__top1: collider obstacle.
+
+### Wisp_Thicket
+    - Wisp_02__top1: collider obstacle.
+    - Wisp_03: titled area should be Greymoor.
+    - Wisp_03__top1: collider obstacle.
+    - Wisp_05__left1: collider obstacle.
+    - Wisp_06: titled area should be Greymoor.
+
+### Weavenest_Atla
+    - Weave_02__right3: collider obstacle.
+
+### The_Cradle
+    - Cradle_02__left2: collider obstacle.
+    - Tube_Hub: in Act 3 only, all three transition gates are blocked.
 
 ### Doors with dynamic targets
     - Shadow_04__left1: collider obstacle.
