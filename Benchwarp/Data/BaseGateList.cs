@@ -239,7 +239,12 @@ public static class BaseGateList
             new UnmaskerInfo("Masks")
         ])
     };
-    public static DoorData Arborium_Tube__door_tubeEnter { get; } = new(new(Arborium_Tube, door_tubeEnter));
+    public static DoorData Arborium_Tube__door_tubeEnter { get; } = new(new(Arborium_Tube, door_tubeEnter))
+    {
+        Obstacles = new([
+            new ObstacleInfo("City Travel Tube/tube_toll_machine", ObstacleType.Other, ObstacleSeverity.AbnormalVisual)
+        ])
+    };
     public static DoorData Arborium_Tube__right1 { get; } = new(new(Arborium_Tube, right1), new(Arborium_01, left3));
     public static DoorData Aspid_01__bot1 { get; } = new(new(Aspid_01, bot1), null, new(Bonetown, top3));
     public static DoorData Aspid_01__bot2 { get; } = new(new(Aspid_01, bot2), new(Bonetown, top2));
@@ -399,7 +404,12 @@ public static class BaseGateList
     public static DoorData Bellway_Aqueduct__right1 { get; } = new(new(Bellway_Aqueduct, right1), new(Aqueduct_06, left1));
     public static DoorData Bellway_Centipede_Arena__top1 { get; } = new(new(Bellway_Centipede_Arena, top1));
     public static DoorData Bellway_City__door_fastTravelExit { get; } = new(new(Bellway_City, door_fastTravelExit));
-    public static DoorData Bellway_City__door_tubeEnter { get; } = new(new(Bellway_City, door_tubeEnter));
+    public static DoorData Bellway_City__door_tubeEnter { get; } = new(new(Bellway_City, door_tubeEnter))
+    {
+        Obstacles = new([
+            new ObstacleInfo("City Travel Tube/tube_toll_machine", ObstacleType.Other, ObstacleSeverity.AbnormalVisual)
+        ])
+    };
     public static DoorData Bellway_City__left1 { get; } = new(new(Bellway_City, left1), new(Song_20, right6), new(Song_20, right_cutsceneEntry));
     public static DoorData Bellway_City__right1 { get; } = new(new(Bellway_City, right1), new(Library_11, left2));
     public static DoorData Bellway_Peak__left1 { get; } = new(new(Bellway_Peak, left1), new(Peak_04c, right1));
@@ -1367,6 +1377,9 @@ public static class BaseGateList
     };
     public static DoorData Dust_09__right1 { get; } = new(new(Dust_09, right1))
     {
+        Obstacles = new([
+            new ObstacleInfo("right_wall_one_way", ObstacleType.OneWayBreakableExit, ObstacleSeverity.LimitsRoomAccess | ObstacleSeverity.LimitsVisibility, new PersistentBoolSaveInfo(SceneName: Shadow_04, ID: "Breakable Wall"))
+        ]),
         DynamicTargets = new([
             new(Dust_Maze_Last_Hall, left1),
             new(Shadow_04, left1)
@@ -1588,7 +1601,12 @@ public static class BaseGateList
     public static DoorData Hang_06__right1 { get; } = new(new(Hang_06, right1), new(Hang_06b, left1));
     public static DoorData Hang_06__top1 { get; } = new(new(Hang_06, top1), new(Hang_08, bot1));
     public static DoorData Hang_06_bank__left1 { get; } = new(new(Hang_06_bank, left1), new(Hang_06, door1));
-    public static DoorData Hang_06b__door_tubeEnter { get; } = new(new(Hang_06b, door_tubeEnter));
+    public static DoorData Hang_06b__door_tubeEnter { get; } = new(new(Hang_06b, door_tubeEnter))
+    {
+        Obstacles = new([
+            new ObstacleInfo("new_scene/City Travel Tube/tube_toll_machine", ObstacleType.Other, ObstacleSeverity.AbnormalVisual)
+        ])
+    };
     public static DoorData Hang_06b__left1 { get; } = new(new(Hang_06b, left1), new(Hang_06, right1));
     public static DoorData Hang_07__bot1 { get; } = new(new(Hang_07, bot1), new(Song_09, top1));
     public static DoorData Hang_07__left1 { get; } = new(new(Hang_07, left1), new(Song_11, right2))
@@ -2249,7 +2267,12 @@ public static class BaseGateList
     public static DoorData Song_01__right2 { get; } = new(new(Song_01, right2), new(Under_07b, left1));
     public static DoorData Song_01__top1 { get; } = new(new(Song_01, top1), new(Song_01b, bot1));
     public static DoorData Song_01b__bot1 { get; } = new(new(Song_01b, bot1), new(Song_01, top1));
-    public static DoorData Song_01b__door_tubeEnter { get; } = new(new(Song_01b, door_tubeEnter));
+    public static DoorData Song_01b__door_tubeEnter { get; } = new(new(Song_01b, door_tubeEnter))
+    {
+        Obstacles = new([
+            new ObstacleInfo("City Travel Tube/tube_toll_machine", ObstacleType.Other, ObstacleSeverity.AbnormalVisual)
+        ])
+    };
     public static DoorData Song_01b__right1 { get; } = new(new(Song_01b, right1), new(Song_02, left2));
     public static DoorData Song_01b__top1 { get; } = new(new(Song_01b, top1), new(Song_03, bot1));
     public static DoorData Song_01c__left1 { get; } = new(new(Song_01c, left1), new(Song_19_entrance, right1));
@@ -2335,14 +2358,24 @@ public static class BaseGateList
     public static DoorData Song_Enclave__left2 { get; } = new(new(Song_Enclave, left2), new(Library_02, right2));
     public static DoorData Song_Enclave__top1 { get; } = new(new(Song_Enclave, top1), new(Song_Enclave_Tube, bot1));
     public static DoorData Song_Enclave_Tube__bot1 { get; } = new(new(Song_Enclave_Tube, bot1), new(Song_Enclave, top1));
-    public static DoorData Song_Enclave_Tube__door_tubeEnter { get; } = new(new(Song_Enclave_Tube, door_tubeEnter));
+    public static DoorData Song_Enclave_Tube__door_tubeEnter { get; } = new(new(Song_Enclave_Tube, door_tubeEnter))
+    {
+        Obstacles = new([
+            new ObstacleInfo("City Travel Tube/tube_toll_machine", ObstacleType.Other, ObstacleSeverity.AbnormalVisual)
+        ])
+    };
     public static DoorData Song_Tower_01__door_cinematicEnd { get; } = new(new(Song_Tower_01, door_cinematicEnd));
     public static DoorData Song_Tower_01__door_cutsceneEndLaceTower { get; } = new(new(Song_Tower_01, door_cutsceneEndLaceTower));
     public static DoorData Song_Tower_01__right1 { get; } = new(new(Song_Tower_01, right1), new(Tube_Hub, left1));
     public static DoorData Song_Tower_Destroyed__bot1 { get; } = new(new(Song_Tower_Destroyed, bot1), new(Cog_09_Destroyed, top1));
     public static DoorData Song_Tower_Destroyed__top1 { get; } = new(new(Song_Tower_Destroyed, top1), new(Cradle_01_Destroyed, bot1));
     public static DoorData Sprintmaster_Cave__left1 { get; } = new(new(Sprintmaster_Cave, left1), new(Bone_East_18b, door1));
-    public static DoorData Tube_Hub__door_tubeEnter { get; } = new(new(Tube_Hub, door_tubeEnter));
+    public static DoorData Tube_Hub__door_tubeEnter { get; } = new(new(Tube_Hub, door_tubeEnter))
+    {
+        Obstacles = new([
+            new ObstacleInfo("City Travel Tube/tube_toll_machine", ObstacleType.Other, ObstacleSeverity.AbnormalVisual)
+        ])
+    };
     public static DoorData Tube_Hub__left1 { get; } = new(new(Tube_Hub, left1), new(Song_Tower_01, right1))
     {
         Obstacles = new([
@@ -2542,7 +2575,12 @@ public static class BaseGateList
     public static DoorData Under_20__door_memoryEnd { get; } = new(new(Under_20, door_memoryEnd));
     public static DoorData Under_20__left1 { get; } = new(new(Under_20, left1), new(Under_17, door1));
     public static DoorData Under_21__right1 { get; } = new(new(Under_21, right1), new(Under_13, left3));
-    public static DoorData Under_22__door_tubeEnter { get; } = new(new(Under_22, door_tubeEnter));
+    public static DoorData Under_22__door_tubeEnter { get; } = new(new(Under_22, door_tubeEnter))
+    {
+        Obstacles = new([
+            new ObstacleInfo("City Travel Tube/tube_toll_machine", ObstacleType.Other, ObstacleSeverity.AbnormalVisual)
+        ])
+    };
     public static DoorData Under_22__right1 { get; } = new(new(Under_22, right1), new(Under_13, left4));
     public static DoorData Under_23__bot1 { get; } = new(new(Under_23, bot1), new(Wisp_09, top1));
     public static DoorData Under_23__right1 { get; } = new(new(Under_23, right1), new(Under_05, left3));
